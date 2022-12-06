@@ -36,8 +36,10 @@ div {
 <h1>Você escolheu: </h1>
 <img src="/images/Mocha.jpg" alt="">
 <p id="mocha">Mocha - $ 4.50</p>
-<button onclick="pedidos.adicionarCarrinho(4)">Fazer pedido</button>
-
+<form action="/adicionar" method="post">
+    <input type="hidden" name="add" id="add" value="Mocha">
+    <button>Fazer pedido</button>
+</form>
 </div>
 
 </body>

@@ -34,8 +34,10 @@ div {
 <h1>Você escolheu: </h1>
 <img src="/images/CaramelMacchiato.jpg" alt="">
 <p id="caramel">Caramel Macchiato - $ 3.75</p>
-<button>Fazer pedido</button>
-
+<form action="/adicionar" method="post">
+    <input type="hidden" name="add" id="add" value="Caramel">
+    <button>Fazer pedido</button>
+</form>
 
 </div>
 

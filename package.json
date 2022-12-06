@@ -16,9 +16,9 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "faker": "^5.5.3",
-    "js": "^0.1.0"
+    "js": "^0.1.0",
+    "nodemon": "^2.0.20"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuliopss/Dev-nuvem.git"
@@ -27,5 +27,4 @@
     "url": "https://github.com/tuliopss/Dev-nuvem/issues"
   },
   "homepage": "https://github.com/tuliopss/Dev-nuvem#readme"
-
 }
