@@ -165,8 +165,7 @@ app.post('/adicionar', function(req, res) {
     carrinho.join(',');
     
     prices.push(req.body.addPrice)
-    prices.join('-;')
-
+    
     res.redirect('/cardapio');
 
 })
@@ -183,11 +182,17 @@ app.get('/sobremesa', function(req, res){
 
 app.get('/conta', function(req, res){
     var conta = 0;
+    var numberPrice = [];
+
+    for (let i = 0; i < prices.length; i++) {
+        numberPrice.push(parseFloat(prices[i]));
+
+    }
     
     
     for(let i = 0; i < prices.length; i++) {
-        conta += prices[i];
-        console.log(Number(conta))
+        conta += numberPrice[i];
+        
     }
     res.send('Sua conta foi: ' + conta)
 })
