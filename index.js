@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/CafeMenu')); //upar css e js
 
 var pedidos = require('./public/js/pedidos.js')
 
-let carrinho = [];
+let carrinho = ["Seus pedidos --> "];
 
 app.listen(8888, function(erro) { //ligar o servidor
     if (erro) {
@@ -164,8 +164,8 @@ app.get("/cardapio/pedido/:index", function(request, response){ //fazer o pedido
 })
 
 app.post('/adicionar', function(req, res) {
-    carrinho.push(req.body.add)
-    res.redirect('/cardapio')
+    carrinho.push(req.body.add);
+    res.redirect('/cardapio');
 
 })
 
