@@ -18,7 +18,8 @@ app.use(express.static(__dirname + '/CafeMenu')); //upar css e js
 
 var pedidos = require('./public/js/pedidos.js')
 
-let carrinho = ["Seus pedidos --> "];
+let carrinho = ["Seus pedidos: "];
+let prices = [];
 
 app.listen(8888, function(erro) { //ligar o servidor
     if (erro) {
@@ -28,10 +29,7 @@ app.listen(8888, function(erro) { //ligar o servidor
     }
 })
 
-// if (request.body.session) {
-//     response.render(path.join('index.html'))
 
-// }
 
 app.get('/cadastro', function(request, response){
     response.render('cadastro') //Completar a tela de cadastro [nao ta pronta]
@@ -88,9 +86,9 @@ app.get("/home", function(request, response){ //rota home
 app.get("/cardapio", function(request, response){ //rota de cardapio
     const itens = ["French Vanilla", "Caramel Macchiato", "Pumpkin Spice ", "Hazelnut", "Mocha"];
     console.log(carrinho)
+    console.log(prices)
     response.render('cafemenu');
     
-
 })
 
 
@@ -123,7 +121,7 @@ app.get("/cardapio/pedido/:index", function(request, response){ //fazer o pedido
     if(index == 0) {
             response.render('vanilla');
             let valor = pedidos.valor(0);
-            console.log('Você escolheu o café: ' + itens[index])          
+            console.log('Você escolheu o café: ' + itens[index])   
 
 
             }else if (index == 1) {
@@ -132,7 +130,6 @@ app.get("/cardapio/pedido/:index", function(request, response){ //fazer o pedido
             console.log('Você escolheu o café: ' + itens[index])                                                                       
 
 
-            
              } else if (index == 2) {
             response.render('pumpkin');
             let valor = pedidos.valor(2);
@@ -165,6 +162,11 @@ app.get("/cardapio/pedido/:index", function(request, response){ //fazer o pedido
 
 app.post('/adicionar', function(req, res) {
     carrinho.push(req.body.add);
+    carrinho.join(',');
+    
+    prices.push(req.body.addPrice)
+    prices.join('-;')
+
     res.redirect('/cardapio');
 
 })
@@ -177,6 +179,17 @@ app.get('/sobremesa', function(req, res){
     ]
     console.log(sobremesa);
     res.render('sobremesa')
+})
+
+app.get('/conta', function(req, res){
+    var conta = 0;
+    
+    
+    for(let i = 0; i < prices.length; i++) {
+        conta += prices[i];
+        console.log(Number(conta))
+    }
+    res.send('Sua conta foi: ' + conta)
 })
 
 

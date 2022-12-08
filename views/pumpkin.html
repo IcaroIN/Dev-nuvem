@@ -29,6 +29,7 @@ div {
 </style>
 </head>
 
+<!--<script src="/public/js/pedidos.js"></script> -->
 <body>
 <div>
 <h1>Você escolheu: </h1>
@@ -36,7 +37,8 @@ div {
 <p id="pumpkin">Pumpkin Spice - $ 3.50</p>
 <form action="/adicionar" method="post">
     <input type="hidden" name="add" id="add" value="Pumpkin - $ 3.50">
-    
+    <input type="hidden" name="addPrice" id = "addPrice" value="3.50">
+
     <button>Fazer pedido</button>
 </form>
 </div>
