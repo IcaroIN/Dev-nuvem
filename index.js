@@ -2,7 +2,6 @@ const { text, response } = require('express');
 const express = require('express');
 const bodyParser = require('body-parser');
 var path = require('path');
-//const session = require('express-session')
 
 const app = express();
 
@@ -101,10 +100,8 @@ app.get("/cardapio/pedido", function(request, response){ //rota de pedido
      " 4 - Mocha",
      " 5 - Express"];
 
-    //Gerar uma interface gráfica para os pedidos
     response.render('pedido')
-    //response.send("Escolha o seu café:" + itens)    
-    console.log(itens)                                                                            //" <br><input type='text' id='pedido'> " + " <br><button onclick='pedido()'>Escolher</button>") //concatenar. nao envia 2 sends
+    console.log(itens)                                                                            
  
 })
 
@@ -156,7 +153,6 @@ app.get("/cardapio/pedido/:index", function(request, response){ //fazer o pedido
                 response.send('<h1>Item não registrado</h1>')
             }
     
-    //Gerar uma interface gráfica interativa para escolher um pedido
 
 })
 
