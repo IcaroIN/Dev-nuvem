@@ -48,17 +48,10 @@ function valor(index) {
  
 }
 
-function conta() {
-   /* var total = 0;
-    for(let i = 0; i < prices.length; i++) {
-        total += prices[i];
-        console.log(total)
-    }*/
-    console.log(prices)
-}
+
 
 
 module.exports = {
     valor,
-    conta
+        
 }
