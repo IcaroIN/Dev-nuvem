@@ -194,7 +194,7 @@ app.get('/conta', function(req, res){
         conta += numberPrice[i];
         
     }
-    res.send('Sua conta foi: ' + conta)
+    res.render('Sua conta foi: ' + conta)
 })
 
 
